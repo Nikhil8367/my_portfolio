@@ -6,19 +6,19 @@ const Button = ({text,transport}) => {
 const handleClick = () => {
   if (!transport) return;
 
-  // External link (https://..., http://...)
+  // External link
   if (transport.startsWith("http")) {
     window.open(transport, "_blank");
     return;
   }
 
-  // Internal route (/about, /projects)
+  // Internal route
   if (transport.startsWith("/")) {
     window.location.href = transport;
     return;
   }
 
-  // Otherwise treat as section id (about, skills, contact)
+  // Section scroll
   const section = document.getElementById(transport);
   if (section) {
     section.scrollIntoView({ behavior: "smooth" });

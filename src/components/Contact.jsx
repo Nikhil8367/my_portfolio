@@ -22,7 +22,7 @@ export default function Contact() {
                 Email
               </>
             }
-            transport="mailto:repalle.nikhil693@gmail.com"
+            transport="https://mail.google.com/mail/?view=cm&fs=1&to=repalle.nikhil693@gmail.com"
           />
 
           <Button

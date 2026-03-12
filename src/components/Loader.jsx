@@ -22,7 +22,7 @@ const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: #0a0e1a;
   backdrop-filter: blur(5px);
   z-index: 999;
 
@@ -35,7 +35,7 @@ const Overlay = styled.div`
   }
 
   .spinner > div {
-   background-color: rgba(0,77,255,0.2);
+   background-color: #0a0e1a;
    height: 100%;
    position: absolute;
    width: 100%;

@@ -1,94 +1,108 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = ({ title, stack, description, highlights, image }) => {
+const Card = ({ title, stack, description, highlights, image, link}) => {
   return (
     <StyledWrapper>
-      <div className="card">
+      
+        <div className="card">
 
-        {/* FRONT SIDE (Image) */}
-        <div className="card__front">
-          <img src={image} alt={title} />
-          <div className="overlay">
-            <h3>{title}</h3>
+          <div className="card__front">
+            <img src={image} alt={title} />
+            <div className="overlay">
+              <h3>{title}</h3>
+            </div>
           </div>
-        </div>
 
-        {/* BACK SIDE */}
-        <div className="card__content">
-          <h3>{title}</h3>
-          <p><strong>Stack:</strong> {stack}</p>
-          <p className="desc">{description}</p>
-          <p className="highlights">{highlights}</p>
-        </div>
+          <div className="card__content">
+            <h3>{title}</h3>
+            <p><strong>Stack:</strong> {stack}</p>
+            <p className="desc">{description}</p>
+            <p className="highlights">{highlights}</p>
 
-      </div>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                <button>View Project</button>
+              </a>
+          </div>
+
+        </div>
+      
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .card {
     position: relative;
     width: 100%;
     max-width: 380px;
-    min-height: 320px;
-    border-radius: 18px;
+    height: 340px;
+    border-radius: 22px;
     overflow: hidden;
-    perspective: 1000px;
-    transition: 0.4s ease;
+    perspective: 1200px;
+    transition: all 0.45s ease;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
   }
 
   .card:hover {
-    transform: scale(1.03);
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.5);
   }
 
-  /* FRONT */
   .card__front {
     position: relative;
     width: 100%;
-    min-height: 320px;
+    height: 100%;
     overflow: hidden;
-    backface-visibility: hidden;
   }
 
   .card__front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .card:hover .card__front img {
+    transform: scale(1.08);
   }
 
   .overlay {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 22px;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.85),
+      rgba(0,0,0,0.1)
+    );
     color: white;
   }
 
   .overlay h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
     margin: 0;
-    font-size: 1.3rem;
   }
 
-  /* BACK */
   .card__content {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 320px;
-    padding: 30px;
-    box-sizing: border-box;
-    background: #121212;
-    color: #f1f1f1;
+    inset: 0;
+    padding: 26px;
+    background: rgba(10, 18, 35, 0.96);
+    backdrop-filter: blur(10px);
+    color: white;
     transform: rotateX(-90deg);
     transform-origin: bottom;
-    transition: 0.6s;
+    transition: 0.55s ease;
     overflow-y: auto;
-    backface-visibility: hidden;
   }
 
   .card:hover .card__content {
@@ -96,21 +110,39 @@ const StyledWrapper = styled.div`
   }
 
   .card__content h3 {
-    margin-bottom: 12px;
-    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
   }
 
   .card__content p {
+    margin-bottom: 12px;
+    line-height: 1.45;
+  }
+
+  .desc {
+    color: #d1d5db;
     font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    color: #cccccc;
   }
 
   .highlights {
-    margin-top: 14px;
-    font-size: 0.9rem;
-    color: #00d9ff;
+    color: #facc15;
+    font-weight: 600;
+  }
+
+  button {
+    margin-top: 16px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  button:hover {
+    transform: scale(1.05);
   }
 `;
 

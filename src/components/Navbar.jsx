@@ -27,11 +27,10 @@ export default function Navbar({ theme, setTheme }) {
         <li><a href="#about" onClick={handleNavClick}>About</a></li>
         <li><a href="#projects" onClick={handleNavClick}>Projects</a></li>
         <li><a href="#skills" onClick={handleNavClick}>Skills</a></li>
-        <li><a href="#testimonials" onClick={handleNavClick}>Testimonials</a></li>
 
         <li>
           <a href="#contact" onClick={handleNavClick}>
-            <button className="cta-button">Contact Me</button>
+            Contact Me
           </a>
         </li>
 
