@@ -36,21 +36,25 @@ const handleClick = () => {
 
 const StyledWrapper = styled.div`
   button {
-    padding: 15px 25px;
-    border: unset;
-    border-radius: 15px;
-    color: #212121;
+    padding: 16px 32px;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    color: #fff;
     z-index: 1;
-    background: #e8e8e8;
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
     position: relative;
-    font-weight: 1000;
-    font-size: 17px;
+    font-weight: 700;
+    font-size: 16px;
     cursor: pointer;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 
-    /* ONLY CHANGED THIS */
-    transition: all 1s;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     overflow: hidden;
   }
 
@@ -61,22 +65,46 @@ const StyledWrapper = styled.div`
     left: 0;
     height: 100%;
     width: 0;
-    border-radius: 15px;
-    background-color: #1a133aff;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     z-index: -1;
 
-    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
 
-    /* ONLY CHANGED THIS */
-    transition: all 1s;
+  button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
   }
 
   button:hover {
-    color: #e8e8e8;
+    color: #fff;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 16px 40px rgba(59, 130, 246, 0.6),
+                0 0 60px rgba(59, 130, 246, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
   button:hover::before {
     width: 100%;
+  }
+
+  button:hover::after {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+
+  button:active {
+    transform: translateY(-2px) scale(1.02);
   }
 `;
 

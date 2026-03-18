@@ -15,35 +15,41 @@ export default function Contact() {
 
         <div className="contact-buttons">
 
-          <Button
-            text={
-              <>
-                <FaEnvelope style={{ marginRight: "8px" }} />
-                Email
-              </>
-            }
-            transport="https://mail.google.com/mail/?view=cm&fs=1&to=repalle.nikhil693@gmail.com"
-          />
+          <div className="contact-btn-wrapper">
+            <Button
+              text={
+                <>
+                  <FaEnvelope style={{ marginRight: "8px", fontSize: "18px" }} />
+                  Email
+                </>
+              }
+              transport="https://mail.google.com/mail/?view=cm&fs=1&to=repalle.nikhil693@gmail.com"
+            />
+          </div>
 
-          <Button
-            text={
-              <>
-                <FaGithub style={{ marginRight: "8px" }} />
-                GitHub
-              </>
-            }
-            transport="https://github.com/Nikhil8367"
-          />
+          <div className="contact-btn-wrapper">
+            <Button
+              text={
+                <>
+                  <FaGithub style={{ marginRight: "8px", fontSize: "18px" }} />
+                  GitHub
+                </>
+              }
+              transport="https://github.com/Nikhil8367"
+            />
+          </div>
 
-          <Button
-            text={
-              <>
-                <FaLinkedin style={{ marginRight: "8px" }} />
-                LinkedIn
-              </>
-            }
-            transport="https://www.linkedin.com/in/nikhil-repalle-283879293/"
-          />
+          <div className="contact-btn-wrapper">
+            <Button
+              text={
+                <>
+                  <FaLinkedin style={{ marginRight: "8px", fontSize: "18px" }} />
+                  LinkedIn
+                </>
+              }
+              transport="https://www.linkedin.com/in/nikhil-repalle-283879293/"
+            />
+          </div>
 
         </div>
       </section>

@@ -145,14 +145,16 @@ const StyledHero = styled.section`
   /* ---------- TYPING TEXT ---------- */
 
   .typing-text{
-    font-size:1.3rem;
+    font-size:1.4rem;
     margin-top:10px;
     min-height:32px;
     font-weight:600;
+    letter-spacing:0.5px;
   }
 
   .cursor{
     animation:blink 1s infinite;
+    margin-left:2px;
   }
 
   @keyframes blink{
@@ -162,8 +164,10 @@ const StyledHero = styled.section`
   }
 
   .hero-subtext{
-    margin-top:12px;
+    margin-top:16px;
     opacity:0.9;
+    font-size:1.05rem;
+    line-height:1.6;
   }
 
 `;
